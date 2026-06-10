@@ -1,0 +1,49 @@
+/* --- Global Window & Widget Styling --- */
+
+window, 
+.background {
+    background-color: @window_bg_color; /* #160D16 */
+    color: @theme_fg_color; /* #fef9f3 */
+}
+
+/* Style for Buttons to match your bar's pill look */
+button {
+    background-color: alpha(@bright_black, 0.3); /* #4d3c4d */
+    border: 2px solid @cyan; /* #91e3e1 */
+    border-radius: 12px;
+    color: @foreground;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: @blue; /* #a7aaaf */
+    color: @background; /* #160D16 */
+    border-color: @magenta; /* #e382d2 */
+}
+
+/* Header bars (Titlebars) matching your deep background */
+headerbar {
+    background-color: @headerbar_bg_color; /* #160D16 */
+    color: @headerbar_fg_color;
+    border-bottom: 1px solid alpha(@cyan, 0.3);
+}
+
+/* Sidebar and View areas */
+sidebar, 
+stacksidebar, 
+.sidebar {
+    background-color: @sidebar_bg_color; /* #160D16 */
+}
+
+/* Highlighting selected items (like in file managers) */
+selection {
+    background-color: @theme_selected_bg_color; /* #a7aaaf */
+    color: @theme_selected_fg_color; /* #160D16 */
+}
+
+/* Matching the Cat/Omarchy Magenta for active states */
+.active,
+.selected {
+    background-color: @magenta; /* #e382d2 */
+    color: @background;
+}

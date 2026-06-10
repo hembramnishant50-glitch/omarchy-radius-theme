@@ -1,0 +1,79 @@
+/* ────────────────────────────────────────────────────────────
+ * Omarchy Theme - Aether Override
+ * Syncs GTK apps with #160D16 Background & Cyan/Magenta Accents
+ * ──────────────────────────────────────────────────────────── */
+
+/* Dynamic Color Palette */
+@define-color background #160D16;
+@define-color foreground #fef9f3;
+
+/* Standard Colors Mapping */
+@define-color color0 #160D16; /* Black */
+@define-color color1 #fe4d2a; /* Red */
+@define-color color2 #83bc7b; /* Green */
+@define-color color3 #f7f24f; /* Yellow */
+@define-color color4 #a7aaaf; /* Blue (Hover/Selection) */
+@define-color color5 #e382d2; /* Magenta (Active) */
+@define-color color6 #91e3e1; /* Cyan (Accents) */
+@define-color color7 #F6C9A0; /* White/Tan */
+
+/* Bright Variants */
+@define-color color8  #4d3c4d;
+@define-color color9  #ff9985;
+@define-color color10 #bbddb6;
+@define-color color11 #fffca3;
+@define-color color12 #d7d8db;
+@define-color color13 #f6cbee;
+@define-color color14 #d9f7f6;
+@define-color color15 #fef9f3;
+
+/* --- Base GTK theme variables --- */
+@define-color theme_bg_color @background;
+@define-color theme_fg_color @foreground;
+@define-color theme_base_color @background;
+@define-color theme_text_color @foreground;
+@define-color theme_selected_bg_color @color4; /* Blue Selection */
+@define-color theme_selected_fg_color @background;
+
+/* --- Adwaita / Libadwaita Overrides --- */
+@define-color accent_bg_color @color6; /* Cyan Accent */
+@define-color accent_fg_color @background;
+@define-color accent_color @color6;
+
+@define-color window_bg_color @background;
+@define-color window_fg_color @foreground;
+
+/* Sidebar and Content */
+@define-color view_bg_color @background;
+@define-color sidebar_bg_color @background;
+@define-color sidebar_fg_color @foreground;
+
+/* Headerbar (Titlebars) */
+@define-color headerbar_bg_color @background;
+@define-color headerbar_fg_color @foreground;
+@define-color headerbar_border_color alpha(@color6, 0.2);
+
+/* Selections (Magenta for Active) */
+@define-color selection_bg_color @color5; 
+@define-color selection_fg_color @background;
+
+/* Dropdowns & Buttons */
+@define-color dropdown_selected_bg_color @color5;
+@define-color button_bg_color alpha(@foreground, 0.07);
+@define-color button_fg_color @foreground;
+
+/* SVG Icons - Matches your specific filter */
+.svg-icon {
+    filter: invert(79%) sepia(18%) saturate(611%) hue-rotate(192deg)
+        brightness(103%) contrast(94%);
+}
+
+/* Rounded Corners - Matching your Hyprland/Waybar "Pill" style */
+* {
+    border-radius: 14px;
+}
+
+/* Remove rounding for specific window elements if needed */
+window.main, .maximized {
+    border-radius: 0;
+}

@@ -1,0 +1,44 @@
+/* Color variables synced with your GTK theme */
+@define-color selected-text #fef9f3;      /* Matches foreground */
+@define-color text #fef9f3;               /* Matches foreground */
+@define-color base #160D16;               /* Matches background */
+@define-color border #91e3e1;             /* Matches cyan */
+@define-color foreground #fef9f3;         /* Matches foreground */
+@define-color background #160D16;         /* Matches background */
+@define-color hover #a7aaaf;              /* Matches blue/hover color */
+@define-color selected-box #e382d2;       /* Matches magenta for selection */
+
+window .search-container,
+window .input {
+  background: @base;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+  color: @foreground;
+  border: none;
+  border-radius: 28px;
+  padding: 3px 16px;
+  margin-top: 1px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.box-wrapper {
+  background: @base;                     /* Full background match */
+  border: 2px solid @border;              /* Cyan border */
+  border-radius: 28px;
+}
+
+child:selected {
+  border-radius: 10px;
+  background-color: @selected-box;            /* Solid magenta highlight */
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  transition: background-color 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+child:selected .item-box {
+  transition: transform 0.14s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateX(6px);
+}
+
+child:selected .item-box * {
+  color: @text;                           /* Foreground text */
+}

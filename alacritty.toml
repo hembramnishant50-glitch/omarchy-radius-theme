@@ -1,0 +1,37 @@
+[colors]
+[colors.primary]
+# Deep Purple background and Off-white foreground
+background = "#160D16"
+foreground = "#fef9f3"
+
+[colors.normal]
+# Synced with your GTK normal palette
+black   = "#160D16"
+red     = "#fe4d2a"
+green   = "#83bc7b"
+yellow  = "#f7f24f"
+blue    = "#a7aaaf"
+magenta = "#e382d2"
+cyan    = "#91e3e1"
+white   = "#F6C9A0"
+
+[colors.bright]
+# Synced with your GTK bright variants
+black   = "#4d3c4d"
+red     = "#ff9985"
+green   = "#bbddb6"
+yellow  = "#fffca3"
+blue    = "#d7d8db"
+magenta = "#f6cbee"
+cyan    = "#d9f7f6"
+white   = "#fef9f3"
+
+[colors.cursor]
+# Cursor uses the Cyan accent for high visibility
+text   = "#160D16"
+cursor = "#91e3e1"
+
+[window]
+# Matching the opacity/blur of your Ghostty and Hyprland setup
+opacity = 0.93
+blur = true

@@ -1,0 +1,67 @@
+# ────────────────────────────────────────────────────────────
+# BTOP THEME — Dark Purple Cyan Neon (matching your Walker GTK theme)
+# ────────────────────────────────────────────────────────────
+
+# Very dark purple background (almost black, with slight purple tint) + transparency support in mind
+theme[main_bg]="#160D16"
+
+# Main text – creamy off-white for high readability
+theme[main_fg]="#fef9f3"
+
+# Titles – bright cyan accent (neon glow feel)
+theme[title]="#91e3e1"
+
+# Highlight text (e.g., shortcuts) – brighter cyan
+theme[hi_fg]="#a7fffc"  # Slightly brighter variant of your cyan for pop
+
+# Selected row background – semi-transparent magenta overlay feel
+theme[selected_bg]="#2a1a28"  # Darker purple with magenta tint (~30% alpha magenta on base)
+
+# Selected row text – bright creamy white with slight cyan tint
+theme[selected_fg]="#fef9f3"
+
+# Inactive/dim text – muted hover-like gray
+theme[inactive_fg]="#a7aaaf"
+
+# Misc text (e.g., process details) – soft creamy
+theme[proc_misc]="#fef9f3"
+
+# Box outlines & dividers – your main cyan border color
+theme[cpu_box]="#91e3e1"
+theme[mem_box]="#91e3e1"
+theme[net_box]="#91e3e1"
+theme[proc_box]="#91e3e1"
+theme[div_line]="#91e3e1"
+
+# Graph gradients – cyan neon glow: dark purple → mid cyan → bright cyan
+theme[temp_start]="#2d1a2d"   # Dark purple base
+theme[temp_mid]="#4a8080"
+theme[temp_end]="#91e3e1"
+
+theme[cpu_start]="#2d1a2d"
+theme[cpu_mid]="#4a8080"
+theme[cpu_end]="#91e3e1"
+
+theme[free_start]="#2d1a2d"
+theme[free_mid]="#4a8080"
+theme[free_end]="#91e3e1"
+
+theme[cached_start]="#2d1a2d"
+theme[cached_mid]="#4a8080"
+theme[cached_end]="#91e3e1"
+
+theme[available_start]="#2d1a2d"
+theme[available_mid]="#4a8080"
+theme[available_end]="#91e3e1"
+
+theme[used_start]="#3a1a35"    # Slight magenta tint for "used" to echo selection
+theme[used_mid]="#6a4a65"
+theme[used_end]="#e382d2"
+
+theme[download_start]="#2d1a2d"
+theme[download_mid]="#4a8080"
+theme[download_end]="#91e3e1"
+
+theme[upload_start]="#2d1a2d"
+theme[upload_mid]="#4a8080"
+theme[upload_end]="#91e3e1"

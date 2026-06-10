@@ -1,0 +1,56 @@
+/* Color variables synced with your GTK theme */
+@define-color bg #160D16;          /* background */
+@define-color fg #fef9f3;          /* foreground */
+@define-color cyan #91e3e1;        /* cyan accent */
+@define-color magenta #e382d2;     /* magenta selection */
+@define-color gray_border #4d3c4d; /* bright_black */
+@define-color hover_blue #a7aaaf;  /* blue */
+
+window {
+    background-color: @bg;         /* #160D16 */
+    border: 2px solid @cyan;       /* Matches Waybar and GTK accents */
+    border-radius: 14px;           /* Matches your Waybar pill style */
+}
+
+input {
+    background-color: @bg;         /* #160D16 */
+    color: @fg;                    /* #fef9f3 */
+    border: 1px solid @gray_border;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 8px;
+}
+
+input:focus {
+    border: 1px solid @magenta;    /* Glow magenta when typing */
+}
+
+#entry {
+    color: @fg;                    /* #fef9f3 */
+    background-color: transparent;
+    padding: 10px;
+    margin: 2px 10px;
+    border-radius: 10px;
+}
+
+#entry:selected {
+    background-color: @magenta;    /* Magenta selection matching workspaces */
+    color: @bg;                    /* Dark text on light background */
+}
+
+#text:selected {
+    color: @bg;                    /* Ensure text is readable on magenta */
+}
+
+scrollbar {
+    background-color: @bg;
+}
+
+scrollbar slider {
+    background-color: @gray_border;
+    border-radius: 5px;
+}
+
+scrollbar slider:hover {
+    background-color: @hover_blue; /* Blue hover */
+}

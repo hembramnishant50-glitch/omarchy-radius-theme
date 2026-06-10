@@ -1,0 +1,50 @@
+/**
+* @name Omarchy
+* @author @bypass_
+* @version 0.1.0
+* @description Match Omarchy system theme.
+* @source https://github.com/imbypass/base16-Discord
+**/
+@import url("https://imbypass.github.io/base16-discord/omarchy-discord.theme.css");
+
+:root {
+    /* Main Backgrounds */
+    --color00: #160D16; /* Deep Purple Background */
+    --color01: #231923; /* Slightly lighter for panels */
+    --color02: #4d3c4d; /* Selection / Lighter panels */
+    
+    /* Text & Foreground */
+    --color03: #a7aaaf; /* Muted text / Blue */
+    --color04: #fef9f3; /* Foreground text */
+    --color05: #fef9f3; /* Main text */
+    --color06: #fef9f3;
+    --color07: #ffffff; /* Pure white */
+
+    /* Accents & UI */
+    --color08: #fe4d2a; /* Red - Pings/Alarms */
+    --color09: #f7f24f; /* Yellow */
+    --color10: #fffca3; /* Bright Yellow */
+    --color11: #83bc7b; /* Green - Online Status */
+    --color12: #91e3e1; /* Cyan - Links & Main UI */
+    --color13: #a7aaaf; /* Blue - Hover states */
+    --color14: #e382d2; /* Magenta - Mentions & Active highlights */
+    --color15: #f6cbee; /* Bright Magenta */
+
+    /* Typography Match */
+    --font: "JetBrainsMono Nerd Font"; /* Swapped to match your system font */
+    --font-code: var(--font);
+    --font-primary: var(--font);
+    --font-display: var(--font);
+    --font-heading: var(--font);
+
+    --font-weight-light: 500;
+    --font-weight-normal: 600;
+    --font-weight-medium: 700;
+    --font-weight-semibold: 800;
+    --font-weight-bold: 900;
+
+    /* Custom Rounding to match your system "Pill" style */
+    --radius-small: 8px;
+    --radius-medium: 12px;
+    --radius-large: 14px;
+}

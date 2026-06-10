@@ -1,0 +1,34 @@
+[meta]
+version = 1
+name = "Omarchy"
+description = "Follow your Omarchy system theme."
+variant = "dark"
+inherits = "vicinae-dark"
+icon = "/home/atif/.local/share/omarchy/icon.png"
+
+[colors.core]
+# Pure GTK match
+background = "#160D16"
+foreground = "#fef9f3"
+secondary_background = "#231923" # Slightly lighter purple for depth
+border = "#91e3e1"             # Matches Waybar and GTK accents
+accent = "#91e3e1"             # Cyan accent
+
+[colors.list.item.hover]
+background = "#a7aaaf"          # Blue hover color from GTK theme
+foreground = "#160D16"          # Dark text on hover
+
+[colors.list.item.selection]
+background = "#e382d2"          # Magenta selection (Active workspace style)
+foreground = "#160D16"          # Dark text on selection
+
+[colors.accents]
+# Full palette sync
+blue = "#a7aaaf"
+green = "#83bc7b"
+magenta = "#e382d2"
+orange = "#F6C9A0"
+purple = "#f6cbee"
+red = "#fe4d2a"
+yellow = "#f7f24f"
+cyan = "#91e3e1"

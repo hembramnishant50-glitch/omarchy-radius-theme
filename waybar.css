@@ -1,0 +1,26 @@
+/* Colors synced with your GTK theme */
+@define-color foreground #fef9f3; /* Matches foreground */
+@define-color background #160D16; /* Matches background */
+@define-color cyan       #91e3e1; /* Matches cyan */
+@define-color magenta    #e382d2; /* Matches magenta */
+
+/* Using the base background from your GTK theme */
+window#waybar {
+    background: @background; /* Deep purple background */
+    color: @foreground; /* Off-white text */
+}
+
+/* Matching the pill-style borders seen in your GTK buttons */
+#clock, #workspaces, #battery, #pulseaudio, #network {
+    border: 2px solid @cyan; /* Cyan borders */
+    border-radius: 14px;
+    background: @background;
+    margin: 4px 3px;
+    padding: 0 10px;
+}
+
+/* Matching the active workspace to your GTK selection color */
+#workspaces button.active {
+    background: @magenta; /* Magenta active state */
+    color: @background; /* Dark text on bright background */
+}
