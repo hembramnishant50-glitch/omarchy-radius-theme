@@ -24,11 +24,7 @@ A dark desktop theme for Hyprland with deep purple-black backgrounds, warm gold/
 
 ```bash
 git clone https://github.com/hembramnishant50-glitch/omarchy-radius-theme.git /tmp/omarchy-radius
-cp -r /tmp/omarchy-radius/theme/* ~/.config/omarchy/current/theme/
-cp /tmp/omarchy-radius/extensions/menu.sh ~/.config/omarchy/extensions/menu.sh
-cp /tmp/omarchy-radius/scripts/gaming-mode.sh ~/.config/waybar/scripts/gaming-mode.sh
-chmod +x ~/.config/waybar/scripts/gaming-mode.sh
-hyprctl reload
+
 ```
 
 ### Install waybar config
@@ -48,11 +44,6 @@ cp -r /tmp/omarchy-radius/config/waybar/* ~/.config/waybar/
 
 # Ensure scripts are executable
 chmod +x ~/.config/waybar/scripts/*.sh
-```
-
-Then restart waybar:
-
-```bash
 pkill waybar && waybar &
 ```
 
