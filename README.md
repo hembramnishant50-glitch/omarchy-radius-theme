@@ -1,8 +1,18 @@
-# Omarchy Radius Theme
+# 🌌 Omarchy Radius Theme
 
-A dark desktop theme for Hyprland with deep purple-black backgrounds, warm gold/teal accents, smooth rounded corners, and an integrated gaming mode toggle.
+> A dreamlike, atmospheric desktop experience for **Hyprland**. Wrapped in deep purple-black midnight tones, warm gold/teal accents, and elegant smooth-radius interfaces where minimalism meets cozy utility.
 
-## Preview
+---
+
+## ✨ Features
+
+* 🟣 **Deep Twilight Palette:** A carefully curated dark-ambient color scheme.
+* ⭕ **Signature Smooth Corners:** Clean, modern rounded borders across your entire environment.
+* ⚡ **Integrated Gaming Mode:** A seamless, non-destructive performance toggle built for maximum frames.
+
+---
+
+## 📸 Preview
 
 <p align="center">
   <img width="49%" alt="Desktop" src="https://github.com/user-attachments/assets/958ed953-3659-4111-8bf6-766148613335" />
@@ -18,70 +28,73 @@ A dark desktop theme for Hyprland with deep purple-black backgrounds, warm gold/
   <img width="49%" alt="Colors" src="https://github.com/user-attachments/assets/a02b335e-a1a3-4712-a302-aae8c0f4267e" />
 </p>
 
-## Installation
+---
 
-### Install the theme
+## 🚀 Installation
 
+### 1. Clone the Theme Repository
 ```bash
 git clone https://github.com/hembramnishant50-glitch/omarchy-radius-theme.git /tmp/omarchy-radius
-
 ```
 
-### Install waybar config
+### 2. Install Waybar Configuration
 
-Backs up existing waybar config if present, then installs the themed config and scripts.
+This script safely backs up your existing configuration before deploying the Omarchy Radius theme and its custom scripts.
 
 ```bash
 # Backup existing waybar config if it exists
 if [ -d ~/.config/waybar ]; then
   backup_name="waybar-back-$(date +%d-%m-%Y-%H-%M)"
   cp -r ~/.config/waybar ~/.config/"$backup_name"
-  echo "Backed up existing waybar to ~/.config/$backup_name"
+  echo "✔ Backed up existing waybar to ~/.config/$backup_name"
 fi
 
 # Install theme waybar config
 cp -r /tmp/omarchy-radius/config/waybar/* ~/.config/waybar/
 
-# Ensure scripts are executable
+# Ensure scripts are executable & reload
 chmod +x ~/.config/waybar/scripts/*.sh
 pkill waybar && waybar &
 ```
 
-## Gaming Mode
+---
 
-A performance toggle accessible via the waybar battery menu (Power Profile → Gaming) or directly from the terminal.
+## 🎮 Gaming Mode
 
-### What it does
+Maximize your system performance on the fly. Accessible directly via the **Waybar Battery Menu** (Power Profile → Gaming) or straight from your terminal.
 
-| Setting | Normal | Gaming |
+### Comparison Matrix
+
+| Setting | 🍃 Normal Mode | 🚀 Gaming Mode |
 |---|---|---|
-| Compositor blur | enabled | disabled |
-| Window rounding | 14px | 0 |
-| Window opacity | 0.95 | 1.0 (forced override) |
-| Per-app transparency (alacritty, kitty, etc.) | respected | forced opaque |
-| Waybar backgrounds | alpha transparency | solid |
-| Walker border-radius | 28px / 10px | 0 |
-| Heavy background apps | running | suspended (SIGSTOP) |
+| Compositor Blur | Enabled | Disabled |
+| Window Rounding | 14px | 0px (Sharp) |
+| Window Opacity | 0.95 | 1.0 (Forced Override) |
+| Per-App Transparency | Respected | Forced Opaque |
+| Waybar Backgrounds | Alpha Transparency | Solid |
+| Walker Border-Radius | 28px / 10px | 0px |
+| Heavy Background Apps | Running | Suspended (SIGSTOP) |
 
-### How it works
+### 🛠️ Mechanics Under the Hood
 
-The script tracks state with `/tmp/gaming-mode`.
+The engine tracks its toggle state via `/tmp/gaming-mode` to ensure zero conflict:
 
-**ON:** Backs up Hyprland config and CSS files, disables blur and rounding, appends `windowrule = opacity 1.0 override 1.0 override` (forces all windows to full opacity regardless of per-app settings), strips alpha from waybar CSS, zeros walker rounding, suspends heavy apps via SIGSTOP.
+**When Turned ON:** Safely backs up your active Hyprland and CSS configurations, strips resource-heavy blur/rounding effects, appends standard opacity rules (`windowrule = opacity 1.0 override 1.0 override`), removes Waybar alpha channels, and freezes specified background processes using SIGSTOP.
 
-**OFF:** Restores all configs from backups, runs `hyprctl reload` to clear runtime overrides, resumes suspended apps via SIGCONT. No stale state left behind.
+**When Turned OFF:** Restores original configurations instantly from cache, triggers a clean `hyprctl reload` runtime override refresh, and wakes up suspended apps via SIGCONT. No stale states left behind.
 
-## Theme Colors
+---
 
-| Color | Hex | Usage |
+## 🎨 Palette Breakdown
+
+| Element | Hex Code | Visual Application |
 |---|---|---|
-| Background | `#160D16` | Deep purple-black |
-| Foreground | `#FEF9F3` | Warm off-white text |
-| Cyan | `#91E3E1` | Borders, clock |
-| Magenta | `#E382D2` | Active workspace, selection |
-| Blue | `#6A9EF0` | Functions, hover |
-| Red | `#FF5252` | Errors, warnings |
-| Green | `#69DB7C` | Success, strings |
-| Yellow | `#FFD54F` | Strings, variables |
-| Orange | `#FFB347` | Variables, warnings |
-
+| Background | `#160D16` | Deep, immersive purple-black ambient base |
+| Foreground | `#FEF9F3` | Warm off-white for crisp, readable text |
+| Cyan | `#91E3E1` | Active borders, accents, and status clock |
+| Magenta | `#E382D2` | Focused workspace indicator, active selections |
+| Blue | `#6A9EF0` | Interactive functions and UI hover highlights |
+| Red | `#FF5252` | Error logs, critical alerts, and system warnings |
+| Green | `#69DB7C` | System success indicators and text strings |
+| Yellow | `#FFD54F` | Syntax strings and code variables |
+| Orange | `#FFB347` | Configuration variables and non-critical warnings |
