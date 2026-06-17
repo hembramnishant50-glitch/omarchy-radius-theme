@@ -167,14 +167,14 @@
     },
 
     // -- Weather
-  "custom/weather": {
-    "exec": "~/.config/waybar/scripts/weather.sh",
-    "return-type": "json",
-    "format": "{}",
-    "tooltip": true,
-    "interval": 900,
-    "on-click": "~/.config/waybar/scripts/weather.sh --menu",
-    "on-click-right": "~/.config/waybar/scripts/weather.sh --toggle-unit",
-    "signal": 8
-  }
+    "custom/weather": {
+        "exec": "~/.config/waybar/scripts/weather.sh",
+        "return-type": "json",
+        "format": "{}",
+        "tooltip": true,
+        "interval": 900,
+        "on-click": "~/.config/waybar/scripts/weather.sh --menu",
+        "on-click-right": "~/.config/waybar/scripts/weather.sh --toggle-unit",
+        "signal": 11
+    }
 }
