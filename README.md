@@ -34,7 +34,7 @@
 
 ### 1. Clone the Theme Repository
 ```bash
-git clone https://github.com/hembramnishant50-glitch/omarchy-radius-theme.git /tmp/omarchy-radius
+omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-radius-theme.git /tmp/omarchy-radius
 ```
 
 ### 2. Install Waybar Configuration
