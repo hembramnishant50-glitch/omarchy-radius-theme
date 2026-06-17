@@ -42,30 +42,27 @@ omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-radius-
 This script safely backs up your existing configuration before deploying the Omarchy Radius theme and its custom scripts.
 
 ```bash
-# 1. Safely backup the existing waybar config if it exists
+# 1. Backup existing waybar config if it exists
 if [ -d ~/.config/waybar ]; then
   backup_name="waybar-back-$(date +%d-%m-%Y-%H-%M)"
   cp -r ~/.config/waybar ~/.config/"$backup_name"
   echo "✔ Backed up existing waybar to ~/.config/$backup_name"
   
-  # Clear the old folder so the new theme fits cleanly
+  # Remove the old folder so the incoming one replaces it cleanly
   rm -rf ~/.config/waybar
 fi
 
-# 2. Recreate the clean folder
-mkdir -p ~/.config/waybar
+# 2. Copy the entire waybar folder from omarchy into ~/.config/
+cp -r /home/nishant/.config/omarchy/current/theme/waybar ~/.config/
+echo "✔ Copied new waybar folder into ~/.config/"
 
-# 3. Copy the CONTENTS of the theme folder (using -r and /.)
-cp -r ~/.config/omarchy/current/theme/. ~/.config/waybar/
-echo "✔ Copied theme contents into ~/.config/waybar/"
-
-# 4. Make scripts executable safely (only if they exist)
-if [ -d ~/.config/waybar/scripts ] && [ "$(ls -A ~/.config/waybar/scripts/*.sh 2>/dev/null)" ]; then
-  chmod +x ~/.config/waybar/scripts/*.sh
-  echo "✔ Made scripts executable"
+# 3. Make scripts executable safely if the folder has them
+if [ -d ~/.config/waybar/scripts ]; then
+  chmod +x ~/.config/waybar/scripts/* 2>/dev/null
+  echo "✔ Handled script permissions"
 fi
 
-# 5. Restart Waybar
+# 4. Restart Waybar
 pkill waybar
 waybar &
 echo "✔ Waybar reloaded"
