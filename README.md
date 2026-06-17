@@ -42,19 +42,33 @@ omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-radius-
 This script safely backs up your existing configuration before deploying the Omarchy Radius theme and its custom scripts.
 
 ```bash
-# Backup existing waybar config if it exists
+# 1. Safely backup the existing waybar config if it exists
 if [ -d ~/.config/waybar ]; then
   backup_name="waybar-back-$(date +%d-%m-%Y-%H-%M)"
   cp -r ~/.config/waybar ~/.config/"$backup_name"
   echo "✔ Backed up existing waybar to ~/.config/$backup_name"
+  
+  # Clear the old folder so the new theme fits cleanly
+  rm -rf ~/.config/waybar
 fi
 
-# Install theme waybar config
-cp ~/.config/omarchy/current/theme ~/.config/waybar/
+# 2. Recreate the clean folder
+mkdir -p ~/.config/waybar
 
-# Ensure scripts are executable & reload
-chmod +x ~/.config/waybar/scripts/*.sh
-pkill waybar && waybar &
+# 3. Copy the CONTENTS of the theme folder (using -r and /.)
+cp -r ~/.config/omarchy/current/theme/. ~/.config/waybar/
+echo "✔ Copied theme contents into ~/.config/waybar/"
+
+# 4. Make scripts executable safely (only if they exist)
+if [ -d ~/.config/waybar/scripts ] && [ "$(ls -A ~/.config/waybar/scripts/*.sh 2>/dev/null)" ]; then
+  chmod +x ~/.config/waybar/scripts/*.sh
+  echo "✔ Made scripts executable"
+fi
+
+# 5. Restart Waybar
+pkill waybar
+waybar &
+echo "✔ Waybar reloaded"
 ```
 
 ---
