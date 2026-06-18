@@ -53,7 +53,7 @@ if [ -d ~/.config/waybar ]; then
 fi
 
 # 2. Copy the entire waybar folder from omarchy into ~/.config/
-cp -r ~/.config/omarchy/current/theme/waybar ~/.config/
+cp -r /home/nishant/.config/omarchy/current/theme/waybar ~/.config/
 echo "✔ Copied new waybar folder into ~/.config/"
 
 # 3. Make scripts executable safely if the folder has them
@@ -72,7 +72,7 @@ echo "✔ Waybar reloaded"
 
 ## 🎮 Gaming Mode
 
-Maximize your system performance on the fly. Accessible via the **🎮 gaming icon in Waybar** or straight from your terminal.
+Maximize your system performance on the fly. Accessible directly via the **Waybar Battery Menu** (Power Profile → Gaming) or straight from your terminal.
 
 ### Comparison Matrix
 
@@ -82,7 +82,7 @@ Maximize your system performance on the fly. Accessible via the **🎮 gaming ic
 | Window Rounding | 14px | 0px (Sharp) |
 | Window Opacity | 0.95 | 1.0 (Forced Override) |
 | Per-App Transparency | Respected | Forced Opaque |
-| Window Gaps | 5px / 8px | 2px / 4px (Tight) |
+| Waybar Backgrounds | Alpha Transparency | Solid |
 | Walker Border-Radius | 28px / 10px | 0px |
 | Heavy Background Apps | Running | Suspended (SIGSTOP) |
 
@@ -90,9 +90,9 @@ Maximize your system performance on the fly. Accessible via the **🎮 gaming ic
 
 The engine tracks its toggle state via `/tmp/gaming-mode` to ensure zero conflict:
 
-**When Turned ON:** Safely backs up your active Hyprland and Walker configurations, strips resource-heavy blur/rounding/animations, tightens gaps to 2/4, appends standard opacity rules (`windowrule = opacity 1.0 override 1.0 override`), and freezes specified background processes using SIGSTOP. Waybar is left untouched.
+**When Turned ON:** Safely backs up your active Hyprland and CSS configurations, strips resource-heavy blur/rounding effects, appends standard opacity rules (`windowrule = opacity 1.0 override 1.0 override`), removes Waybar alpha channels, and freezes specified background processes using SIGSTOP.
 
-**When Turned OFF:** Restores original configurations instantly from cache, triggers a clean `hyprctl reload` + restart Walker, and wakes up suspended apps via SIGCONT. No stale states left behind.
+**When Turned OFF:** Restores original configurations instantly from cache, triggers a clean `hyprctl reload` runtime override refresh, and wakes up suspended apps via SIGCONT. No stale states left behind.
 
 ---
 
