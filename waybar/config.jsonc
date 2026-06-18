@@ -53,7 +53,7 @@
     "group/hardware": {
         "orientation": "inherit",
         "drawer": { "transition-duration": 500, "children-class": "hw-item", "transition-left-to-right": false },
-        "modules": ["cpu", "bluetooth"]
+        "modules": ["cpu", "bluetooth", "custom/gaming"]
     },
 
     "cpu": { "format": "󰍛", "on-click": "omarchy-launch-or-focus-tui btop" },
@@ -76,10 +76,15 @@
     },
 
     "custom/update": {
-        "format": "",
+        "format": "{icon}",
         "exec": "omarchy-update-available",
+        "return-type": "json",
+        "format-icons": {
+            "update": "",
+            "uptodate": ""
+        },
         "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
-        "tooltip-format": "Omarchy update available",
+        "tooltip-format": "{tooltip}",
         "signal": 7,
         "interval": 21600
     },
@@ -113,6 +118,15 @@
     },
 
     "custom/power": { "format": "󰐥", "on-click": "omarchy-menu system" },
+
+    "custom/gaming": {
+        "exec": "/home/nishant/.config/waybar/scripts/gaming-status.sh",
+        "return-type": "json",
+        "format": "{text}",
+        "signal": 12,
+        "interval": 5,
+        "on-click": "/home/nishant/.config/waybar/scripts/gaming-mode.sh"
+    },
 
     "group/tray-expander": {
         "orientation": "inherit",

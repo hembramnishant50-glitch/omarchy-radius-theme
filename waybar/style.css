@@ -20,7 +20,7 @@ tooltip {
 
 /* Global Module Styling */
 #custom-omarchy, #workspaces, #clock, #network, #cpu, #bluetooth, #mpris, #pulseaudio,
-#battery, #custom-weather, #custom-power, #custom-update, #custom-voxtype,
+#battery, #custom-weather, #custom-power, #custom-update, #custom-voxtype, #custom-gaming,
 #custom-screenrecording-indicator, #custom-idle-indicator,
 #custom-notification-silencing-indicator, #custom-expand-icon {
     background: alpha(@background, 0.6);
@@ -69,6 +69,9 @@ tooltip {
 #custom-idle-indicator { color: #94e2d5; border: 2px solid #94e2d5; }
 #custom-notification-silencing-indicator { color: #89dceb; border: 2px solid #89dceb; }
 #custom-expand-icon { color: #cdd6f4; border: 2px solid #cdd6f4; }
+
+#custom-gaming.gaming { color: #a6e3a1; border: 2px solid #a6e3a1; }
+#custom-gaming.default { color: #585b70; border: 2px solid #585b70; }
 
 /* --- Battery Personalization (Lighter Colors) --- */
 
